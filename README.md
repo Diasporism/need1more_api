@@ -1,4 +1,4 @@
-Need1More Auth Server
+Need1More API Server
 =========
 This is the API for Need1More. It authenticates via JSON Web Tokens and is meant to be used in conjuction with another frontend application.
 
@@ -10,7 +10,7 @@ Installation
 --------------
 Clone the repo and install its dependencies:
 ```sh
-$ git clone git@github.com:Diasporism/need1more.git
+$ git clone git@github.com:Diasporism/need1more_api.git
 $ cd need1more/
 $ bundle
 $ rake db:create db:migrate
