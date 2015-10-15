@@ -8,8 +8,10 @@ gem 'forgery'
 gem 'jbuilder', '~> 2.0'
 gem 'jwt-rb'
 gem 'pg'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '4.1.2'
 gem 'rails_12factor'
+gem 'unicorn'
 
 group :development, :test do
   gem 'byebug'

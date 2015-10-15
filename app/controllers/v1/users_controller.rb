@@ -1,4 +1,10 @@
 class V1::UsersController < ApplicationController
+  before_action :parse_and_validate_jwt, only: [:show, :update]
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
     user = User.new(user_params)
     if user.save
@@ -10,8 +16,7 @@ class V1::UsersController < ApplicationController
   end
 
   def update
-    jwt = parse_and_validate_jwt
-    if jwt && jwt.first['user_id'] == params[:id].to_i
+    if @jwt.first['user_id'] == params[:id].to_i
       user = User.find(params[:id])
       if user.update_attributes(user_params)
         token = issue_new_token_for(user)

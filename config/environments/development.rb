@@ -44,4 +44,11 @@ Rails.application.configure do
     # Bullet.bugsnag = true
     Bullet.add_footer = true
   end
+
+  config.middleware.insert_before 0, 'Rack::Cors' do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get, :post, :put, :path, :options]
+    end
+  end
 end
